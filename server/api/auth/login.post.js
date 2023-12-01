@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcryptjs from 'bcryptjs';
 import { userTransformer } from '~/server/transformers/user';
 import { getUserByUsername } from '~/server/db/users';
 import { generateTokens, sendRefreshToken } from '~/server/utils/jwt';
@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
 		);
 	}
 
-	const passwordMatch = await bcrypt.compareSync(password, user.password);
+	const passwordMatch = await bcryptjs.compareSync(password, user.password);
 
 	if (!passwordMatch) {
 		return sendError(

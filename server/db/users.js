@@ -1,10 +1,10 @@
 import { prisma } from '.';
-import bcrypt from 'bcrypt';
+import bcryptjs from 'bcryptjs';
 
 export const createUser = (userData) => {
 	const finalUserData = {
 		...userData,
-		password: bcrypt.hashSync(userData.password, 10),
+		password: bcryptjs.hashSync(userData.password, 10),
 	};
 	return prisma.user.create({
 		data: finalUserData,
