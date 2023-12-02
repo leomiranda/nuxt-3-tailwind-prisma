@@ -1,11 +1,7 @@
 <template>
 	<div :class="{ dark: darkMode }">
 		<div class="bg-white dark:bg-dim-900">
-			<div v-if="isAuthLoading">
-				<div class="flex items-center justify-center h-screen">
-					<UiSpinner />
-				</div>
-			</div>
+			<LoadingPage v-if="isAuthLoading" />
 
 			<!-- App -->
 			<div v-else-if="user" class="min-h-full">
