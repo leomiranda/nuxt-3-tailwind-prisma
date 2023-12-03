@@ -7,7 +7,7 @@
 		<div v-if="props.loading" class="flex items-center justify-center p-4">
 			<UiSpinner />
 		</div>
-		<div v-else><slot></slot></div>
+		<div v-else class="p-4"><slot></slot></div>
 	</div>
 </template>
 

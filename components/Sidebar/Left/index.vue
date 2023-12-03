@@ -67,6 +67,17 @@
 				</template>
 				<template v-slot:name> More </template>
 			</SidebarLeftTab>
+
+			<div class="hidden xl:block">
+				<UiButton liquid size="lg">
+					<span class="font-bold"> Tweet </span>
+				</UiButton>
+			</div>
+			<div class="block xl:hidden rounded-full">
+				<UiButton>
+					<div class="w-6 h-6 font-bold"><PencilIcon /></div>
+				</UiButton>
+			</div>
 		</div>
 	</div>
 </template>
