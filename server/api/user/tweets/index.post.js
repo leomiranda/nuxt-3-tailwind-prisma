@@ -24,12 +24,17 @@ export default defineEventHandler(async (event) => {
 		authorId: userId,
 	};
 
+	const replyTo = typeof fields.replyToId === 'string' ? fields.replyToId : fields.replyToId[0];
+
+	if (replyTo && replyTo !== 'null' && replyTo !== 'undefined') {
+		tweetData.replyToId = replyTo;
+	}
+
 	const tweet = await createTweet(tweetData);
 
 	const filePromises = Object.keys(files).map(async (key) => {
 		const file = files[key][0];
 		const cloudinaryResource = await uploadToCloudinary(file.filepath);
-		console.log('🚀 ~ file: index.post.js:32 ~ filePromises ~ response:', cloudinaryResource);
 
 		return createMediaFile({
 			url: cloudinaryResource.secure_url,
@@ -42,6 +47,7 @@ export default defineEventHandler(async (event) => {
 	await Promise.all(filePromises);
 
 	return {
-		tweet: tweetTransformer(tweet),
+		// tweet: tweetTransformer(tweet),
+		tweet,
 	};
 });

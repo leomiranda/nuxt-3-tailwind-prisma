@@ -23,7 +23,7 @@ model User {
 
   RefreshToken RefreshToken[]
   Tweet        Tweet[]
-  MediaFile    MediaFile[]
+  mediaFiles   MediaFile[]
 }
 
 model RefreshToken {
@@ -52,7 +52,7 @@ model Tweet {
   replyTo   Tweet?  @relation("replies", fields: [replyToId], references: [id], onDelete: NoAction, onUpdate: NoAction)
   replies   Tweet[] @relation("replies")
 
-  MediaFile MediaFile[]
+  mediaFiles MediaFile[]
 }
 
 model MediaFile {

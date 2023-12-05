@@ -23,6 +23,9 @@ dependencies:
   formidable:
     specifier: ^3.5.1
     version: 3.5.1
+  human-time:
+    specifier: ^0.0.2
+    version: 0.0.2
   jsonwebtoken:
     specifier: ^9.0.2
     version: 9.0.2
@@ -3630,6 +3633,10 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
     dev: true
+
+  /human-time@0.0.2:
+    resolution: {integrity: sha512-sbYI90YhYmstslPTb70BLGjy6mdESa0lxL7uDR4fIVAx9Iobz8fLEqi7FqF4Q/6vblrzZALg//MsYJlIPBU8SA==}
+    dev: false
 
   /iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
