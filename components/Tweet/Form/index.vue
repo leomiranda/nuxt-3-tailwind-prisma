@@ -3,11 +3,16 @@
 		<UiSpinner />
 	</div>
 	<div v-else>
-		<TweetFormInput :user="props.user" @on-submit="handleFormSubmit" />
+		<TweetFormInput
+			:placeholder="props.placeholder"
+			:user="props.user"
+			@onSubmit="handleFormSubmit"
+		/>
 	</div>
 </template>
 
 <script setup>
+	const emits = defineEmits(['onSuccess']);
 	const loading = ref(false);
 	const { postTweet } = useTweets();
 	const props = defineProps({
@@ -15,14 +20,30 @@
 			type: Object,
 			required: true,
 		},
+		placeholder: {
+			type: String,
+			default: "What's happening?",
+		},
+		replyTo: {
+			type: Object,
+			default: null,
+		},
 	});
 
-	const handleFormSubmit = async (tweet) => {
+	async function handleFormSubmit(data) {
 		loading.value = true;
-		await postTweet({
-			text: tweet.text,
-			mediaFiles: tweet.mediaFiles,
-		});
-		loading.value = false;
-	};
+		try {
+			const response = await postTweet({
+				text: data.text,
+				mediaFiles: data.mediaFiles,
+				replyTo: props.replyTo?.id,
+			});
+
+			emits('onSuccess', response.tweet);
+		} catch (error) {
+			console.log(error);
+		} finally {
+			loading.value = false;
+		}
+	}
 </script>

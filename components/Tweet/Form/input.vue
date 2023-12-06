@@ -8,7 +8,7 @@
 			<textarea
 				v-model="tweet"
 				class="w-full h-20 p-2 text-xl text-gray-900 dark:text-gray-100 placeholder-gray-400 border-none outline-none resize-none bg-transparent focus:ring-0"
-				placeholder="What's happening?"
+				:placeholder="props.placeholder"
 			></textarea>
 		</div>
 	</div>
@@ -130,6 +130,10 @@
 		user: {
 			type: Object,
 			required: true,
+		},
+		placeholder: {
+			type: String,
+			default: "What's happening?",
 		},
 	});
 	const emits = defineEmits(['onSubmit']);
