@@ -19,7 +19,12 @@
 
 	watch(
 		() => route.fullPath,
-		() => getTweet()
+		() => {
+			if (!route.params.id || route.params.id === 'undefined') {
+				return;
+			}
+			getTweet();
+		}
 	);
 
 	async function getTweet() {

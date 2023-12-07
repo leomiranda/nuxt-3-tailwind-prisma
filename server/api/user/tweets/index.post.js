@@ -24,10 +24,10 @@ export default defineEventHandler(async (event) => {
 		authorId: userId,
 	};
 
-	const replyTo = fields?.replyTo;
+	const replyTo = fields?.replyTo[0];
 
 	if (replyTo && replyTo !== 'null' && replyTo !== 'undefined') {
-		tweetData.replyToId = replyTo[0];
+		tweetData.replyToId = replyTo;
 	}
 
 	const tweet = await createTweet(tweetData);
@@ -48,6 +48,5 @@ export default defineEventHandler(async (event) => {
 
 	return {
 		tweet: tweetTransformer(tweet),
-		// tweet,
 	};
 });
