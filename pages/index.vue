@@ -23,6 +23,7 @@
 	const user = useAuthUser();
 
 	async function getTweets() {
+		loading.value = true;
 		try {
 			const { tweets } = await getHomeTweets();
 			homeTweets.value = tweets;
@@ -34,11 +35,12 @@
 	}
 
 	function handleFormSuccess(tweet) {
-		getTweets();
+		navigateTo({
+			path: `/status/${tweet.id}`,
+		});
 	}
 
 	onBeforeMount(async () => {
-		loading.value = true;
 		getTweets();
 	});
 </script>

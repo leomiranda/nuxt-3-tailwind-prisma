@@ -10,6 +10,7 @@
 	</div>
 </template>
 <script setup>
+	import { useRoute } from 'vue-router';
 	const loading = ref(false);
 	const tweet = ref(null);
 	const route = useRoute();
