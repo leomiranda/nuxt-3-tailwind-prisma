@@ -21,7 +21,7 @@
 
 The project is a Social Media App (a Twitter clone) built with Nuxt 3, Tailwind CSS and Prisma. 
 
-The code ncludes Auth made from scratch using JWT the ability to create posts, upload images using cloudinary, nested posts, searching functionality, post details page, responsive design using Tailwind css and much more.
+The code includes Auth made from scratch using JWT the ability to create posts, upload images using cloudinary, nested posts, searching functionality, post details page, responsive design using Tailwind css and much more.
 
 
 ### Credit
