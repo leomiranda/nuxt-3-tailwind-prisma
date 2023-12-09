@@ -14,7 +14,10 @@
 					</div>
 
 					<!-- Main content -->
-					<main class="sticky col-span-12 md:col-span-8 xl:col-span-6">
+					<main
+						class="sticky col-span-12 md:col-span-8 xl:col-span-6 border-x"
+						:class="twitterBorderColor"
+					>
 						<RouterView />
 					</main>
 
@@ -38,6 +41,7 @@
 </template>
 <script setup>
 	const darkMode = ref(false);
+	const { defaultTransition, twitterBorderColor } = useTailwindConfig();
 	const { useAuthUser, initAuth, useAuthLoading, logout } = useAuth();
 	const { usePostTweetModal, openPostTweetModal, closePostTweetModal, useReplyTweet } = useTweets();
 	const user = useAuthUser();
