@@ -4,7 +4,7 @@
 			<img :src="props.user.profileImage" class="inline-block w-10 h-10 rounded-full" />
 		</div>
 
-		<div class="w-full p-2">
+		<div class="flex-1 w-full p-2">
 			<textarea
 				v-model="tweet"
 				class="w-full h-20 p-2 text-xl text-gray-900 dark:text-gray-100 placeholder-gray-400 border-none outline-none resize-none bg-transparent focus:ring-0"

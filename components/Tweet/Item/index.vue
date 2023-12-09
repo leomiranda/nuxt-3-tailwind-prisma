@@ -28,7 +28,7 @@
 
 <script setup>
 	const { twitterBorderColor } = useTailwindConfig();
-	// const emitter = useEmitter();
+	const emitter = useEmitter();
 	const props = defineProps({
 		tweet: {
 			type: Object,
@@ -48,6 +48,6 @@
 	const textSize = computed(() => (props.compact ? 'text-base' : 'text-lg'));
 
 	function handleCommentClick() {
-		// emitter.$emit('replyTweet', props.tweet);
+		emitter.$emit('replyTweet', props.tweet);
 	}
 </script>
