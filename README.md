@@ -2,8 +2,7 @@
 
 *Tweets*
 
-![image](https://github.com/leomiranda/nuxt-3-tailwind-prisma/assets/32196/b7dc39d6-34a3-4119-9638-9e667f79c697)
-
+![image](https://github.com/leomiranda/nuxt-3-tailwind-prisma/assets/32196/3eee082c-4c9c-4445-b3b7-ef30a41d1e2c)
 
 *Dark Mode*
 
